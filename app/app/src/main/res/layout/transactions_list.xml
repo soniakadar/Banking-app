@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+
+        >
+
+        <TextView
+            android:id="@+id/txtType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:hint="type"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="amount"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/labelAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtType"
+            android:layout_marginRight="10dp"
+            android:text="Account"
+            />
+
+        <TextView
+            android:id="@+id/txtAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtType"
+            android:layout_marginRight="10dp"
+            android:hint="account"
+            android:layout_toEndOf="@+id/labelAccount"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/labelRecipient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/labelAccount"
+            android:layout_marginRight="10dp"
+            android:text="Recipient"
+            />
+
+        <TextView
+            android:id="@+id/txtRecipient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtAccount"
+            android:layout_marginRight="10dp"
+            android:hint="recipient"
+            android:textColor="@color/black"
+            android:layout_toEndOf="@+id/labelRecipient"/>
+
+        <TextView
+            android:id="@+id/txtDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtRecipient"
+            android:layout_marginRight="10dp"
+            android:hint="date"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/txtTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtRecipient"
+            android:layout_toEndOf="@+id/txtDate"
+            android:hint="time"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/labelDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtDate"
+            android:layout_marginRight="10dp"
+            android:text="Description"
+            />
+
+
+        <TextView
+            android:id="@+id/txtDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtDate"
+
+            android:hint="Description"
+            android:layout_toEndOf="@id/labelDesc"
+            android:textColor="@color/black" />
+
+
+
+
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

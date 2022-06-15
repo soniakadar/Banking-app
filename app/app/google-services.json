@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1088422563331",
+    "project_id": "space-bank",
+    "storage_bucket": "space-bank.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1088422563331:android:8431f29cbf5d073fb18836",
+        "android_client_info": {
+          "package_name": "com.example.spacebank"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1088422563331-g8uplkvehltkp4qal5ko8c2gqhc9qar4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlbQQD1nRE5cMCrAJzO3HyjFgHAtmreXI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1088422563331-g8uplkvehltkp4qal5ko8c2gqhc9qar4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
