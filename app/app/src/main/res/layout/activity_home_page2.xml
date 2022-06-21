@@ -302,7 +302,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center_horizontal"
-                                android:text="block account"
+                                android:text="Block account"
                                 android:textAlignment="center" />
 
 
@@ -333,7 +333,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center_horizontal"
-                                android:text="unblock account"
+                                android:text="Unblock account"
                                 android:textAlignment="center" />
 
 
