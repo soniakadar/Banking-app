@@ -166,12 +166,12 @@ public class Login extends AppCompatActivity {
                                 inputLayoutPassword.requestFocus();
                             }
                         } else {
-                            inputLayoutEmail.setError("the email doesn't exist");
+                            inputLayoutEmail.setError("There is no account associated to this email");
                             inputLayoutEmail.requestFocus();
                         }
                     }
                 }else{
-                    inputLayoutEmail.setError("the email doesn't exist");
+                    inputLayoutEmail.setError("There is no account associated to this email");
                     inputLayoutEmail.requestFocus();
                 }
             }

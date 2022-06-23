@@ -72,8 +72,7 @@ public class TransferMoney extends AppCompatActivity {
                 inputLayoutAmountTransferMoney.setError(null);
                 inputLayoutAmountTransferMoney.setErrorEnabled(false);
                 sendMoney();
-                //  04062022154916
-                //24052022200945
+
 
             }
         });
@@ -96,7 +95,7 @@ public class TransferMoney extends AppCompatActivity {
                         for (DataSnapshot childSnapshot : snapshot.getChildren()) {
                             account = childSnapshot.getValue(AccountHelper.class);
                             if (account.getCnp().equals(cnp)) {
-                                if (Integer.parseInt(txtAmount.getText().toString()) <= Integer.parseInt(account.getSum())) {
+                                if (Float.parseFloat(txtAmount.getText().toString()) <= Float.parseFloat(account.getSum())) {
                                     checkRecipient();
                                 } else {
                                     inputLayoutAmountTransferMoney.setError("Insufficient sold");
@@ -161,13 +160,13 @@ public class TransferMoney extends AppCompatActivity {
 
         database = FirebaseDatabase.getInstance();
         reference = database.getReference("accounts");
-        int amount = Integer.parseInt(txtAmount.getText().toString());
-        int accountSold = Integer.parseInt(account.getSum()) - amount;
+        float amount = Float.parseFloat(txtAmount.getText().toString());
+        float accountSold = Float.parseFloat(account.getSum()) - amount;
         account.setSum(String.valueOf(accountSold));
         reference.child(account.getAccountNr()).setValue(account);
 
         if(recipient!=null) {
-            int recipientSold = Integer.parseInt(recipient.getSum()) + amount;
+            float recipientSold = Float.parseFloat(recipient.getSum()) + amount;
             recipient.setSum(String.valueOf(recipientSold));
             reference.child(recipient.getAccountNr()).setValue(recipient);
         }

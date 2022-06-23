@@ -106,7 +106,7 @@ public class ExchangeMoney extends AppCompatActivity {
                         for (DataSnapshot childSnapshot : snapshot.getChildren()) {
                             account = childSnapshot.getValue(AccountHelper.class);
                             if (account.getCnp().equals(cnp)) {
-                                if (Integer.parseInt(txtAmount.getText().toString()) <= Integer.parseInt(account.getSum())) {
+                                if (Float.parseFloat(txtAmount.getText().toString()) <= Float.parseFloat(account.getSum())) {
                                     checkRecipient();
                                 } else {
                                     inputLayoutAmountExchange.setError("Insufficient sold");
@@ -173,11 +173,11 @@ public class ExchangeMoney extends AppCompatActivity {
         reference = database.getReference("accounts");
         String baseCurrency = account.getCurrency();
         String convertedToCurrency = recipient.getCurrency();
-        int amount = Integer.parseInt(txtAmount.getText().toString());
-        int accountSold = Integer.parseInt(account.getSum()) - amount;
+        float amount = Float.parseFloat(txtAmount.getText().toString());
+        float accountSold = Float.parseFloat(account.getSum()) - amount;
         account.setSum(String.valueOf(accountSold));
 
-        int convertedAmount = callAPI(baseCurrency,convertedToCurrency,amount);
+        float convertedAmount = callAPI(baseCurrency,convertedToCurrency,amount);
         recipient.setSum(String.valueOf(convertedAmount));
 
         reference.child(account.getAccountNr()).setValue(account);
@@ -191,7 +191,7 @@ public class ExchangeMoney extends AppCompatActivity {
         startActivity(homePage2);
     }
 
-    private void saveTransaction(int convertedAmount) {
+    private void saveTransaction(float convertedAmount) {
         createTransactionAccount();
         createTransactionRecipient(convertedAmount);
 
@@ -200,7 +200,7 @@ public class ExchangeMoney extends AppCompatActivity {
         reference.child(transactionRecipient.getKey()).setValue(transactionRecipient);
     }
 
-    private int callAPI(String baseCurrency, String convertedToCurrency, int amount) {
+    private float callAPI(String baseCurrency, String convertedToCurrency, float amount) {
         int convertedAmount = 0;
         String access_key = "cS9Qs9Fhhbz9YUnYsqSw";
         String API = "https://fcsapi.com/api-v3/forex/latest?symbol=" + baseCurrency +"/" + convertedToCurrency + "&access_key="+ access_key;
@@ -218,8 +218,8 @@ public class ExchangeMoney extends AppCompatActivity {
         return convertedAmount;
     }
 
-    private int getAPIresponse(HttpsURLConnection connection, int amount) throws IOException {
-        int convertedAmount = 0;
+    private float getAPIresponse(HttpsURLConnection connection, float amount) throws IOException {
+        float convertedAmount = 0;
 
         if (connection.getResponseCode() == 200 )
         {
@@ -237,12 +237,12 @@ public class ExchangeMoney extends AppCompatActivity {
         return 0;
     }
 
-    private int calculate(int amount, String output) {
+    private float calculate(float amount, String output) {
         String rateString = output.split("c")[4].replace('"',' ')
                 .replace(':', ' ').replace(',', ' ');
      float rate =  Float.parseFloat(rateString);
      float convertedAmount = amount * rate;
-     return (int) convertedAmount;
+     return (float) convertedAmount;
     }
 //
 
@@ -264,7 +264,7 @@ public class ExchangeMoney extends AppCompatActivity {
         transactionAccount.setTime(formatterTime.format(date).toString());
     }
 
-    private void createTransactionRecipient(int convertedAmount)  {
+    private void createTransactionRecipient(float convertedAmount)  {
         SimpleDateFormat formatterKey = new SimpleDateFormat("ddMMyyyyHHmmss");
         SimpleDateFormat formatterDate = new SimpleDateFormat("dd.MM.yyyy");
         SimpleDateFormat formatterTime = new SimpleDateFormat("HH:mm:ss");

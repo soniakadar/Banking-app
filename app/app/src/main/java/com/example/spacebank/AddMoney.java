@@ -1,5 +1,6 @@
 package com.example.spacebank;
 
+import androidx.annotation.FloatRange;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -97,7 +98,7 @@ public class AddMoney extends AppCompatActivity {
                             account = childSnapshot.getValue(AccountHelper.class);
                             if (account.getCnp().equals(cnp)) {
                                 if(account.getBlocked().equals("")) {
-                                    if (Integer.parseInt(txtAmount.getText().toString()) <= Integer.parseInt(account.getSum())) {
+                                    if (Float.parseFloat(txtAmount.getText().toString()) <= Float.parseFloat(account.getSum())) {
                                         checkRecipient();
                                     } else {
                                         inputLayoutAmountAddMoney.setError("Insufficient sold");
@@ -166,9 +167,9 @@ public class AddMoney extends AppCompatActivity {
     private void addMoneyAction(){
 
 
-        int amount = Integer.parseInt(txtAmount.getText().toString());
-        int accountSold = Integer.parseInt(account.getSum()) - amount;
-        int recipientSold =  Integer.parseInt(recipient.getSum()) + amount;
+        float amount = Float.parseFloat(txtAmount.getText().toString());
+        float accountSold = Float.parseFloat(account.getSum()) - amount;
+        float recipientSold =  Float.parseFloat(recipient.getSum()) + amount;
 
         saveTransaction();
 

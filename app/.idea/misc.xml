@@ -26,7 +26,7 @@
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.3280364990234375" />
         <entry key="app/src/main/res/layout/activity_sign_up_address.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_sign_up_email.xml" value="0.3098958333333333" />
-        <entry key="app/src/main/res/layout/activity_sign_up_name.xml" value="0.4294286092122396" />
+        <entry key="app/src/main/res/layout/activity_sign_up_name.xml" value="0.3266769409179688" />
         <entry key="app/src/main/res/layout/activity_sign_up_password.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/activity_sign_up_phone.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/activity_sign_up_phone_code.xml" value="0.4036458333333333" />
@@ -42,13 +42,13 @@
         <entry key="app/src/main/res/layout/content_signup.xml" value="0.3170289855072464" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.24954710144927536" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.24954710144927536" />
-        <entry key="app/src/main/res/layout/menu_header.xml" value="0.4122234203197338" />
+        <entry key="app/src/main/res/layout/menu_header.xml" value="0.21752127188223377" />
         <entry key="app/src/main/res/layout/movies_list.xml" value="0.3880208333333333" />
         <entry key="app/src/main/res/layout/slides_layout_sign_up.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/slids_.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/transactions_list.xml" value="0.3118188196509152" />
         <entry key="app/src/main/res/layout/unblocked_card.xml" value="0.1" />
-        <entry key="app/src/main/res/menu/main_menu.xml" value="0.3880208333333333" />
+        <entry key="app/src/main/res/menu/main_menu.xml" value="0.30076141357421876" />
       </map>
     </option>
   </component>
